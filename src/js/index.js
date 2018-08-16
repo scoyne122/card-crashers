@@ -12,7 +12,7 @@ ReactDOM.render(
 			<Route exact path='/' component={App} />
 			<Route path='/login' component={Login} />
 			<Route path='/join' component={Join} />
-            <Route path='/create' component={Create} />
+			<Route path='/create' component={Create} />
 		</Switch>
 	</HashRouter>,
 	document.getElementById('app')
