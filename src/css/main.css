@@ -1,3 +1,27 @@
+html, body {
+    margin: 0;
+    overflow: auto;
+}
+
 body {
-    background-color: gray;
+    background-color: black;
+    color: white;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+}
+
+.button:hover {
+    background-color: white;
+    cursor: pointer;
+    border: 2pt solid #0098ff !important;
+    color: #0098ff;
+}
+
+.button:active {
+    border: 2pt solid #006bb3 !important;
+    color: #006bb3;
+}
+
+input:focus {
+    border-left: 2pt solid #0098ff !important;
+    border-bottom: 2pt solid #0098ff !important;
 }
