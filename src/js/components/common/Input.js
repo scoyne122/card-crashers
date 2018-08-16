@@ -13,12 +13,13 @@ const styles = {
 	}
 };
 
-const Input = ({ placeholder }) => {
-	return <input className='input' style={styles.input} placeholder={placeholder} />;
+const Input = ({ placeholder, onChange }) => {
+	return <input className='input' style={styles.input} placeholder={placeholder} onChange={onChange} />;
 };
 
 Input.propTypes = {
-	text: PropTypes.string // text to display in button
+	text: PropTypes.string, // text to display in button
+	onChange: PropTypes.func
 };
 
 export default Input;

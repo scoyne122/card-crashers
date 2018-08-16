@@ -25,22 +25,47 @@ const styles = {
 	}
 };
 
-const NamePanel = ({ }) => {
-	return (
-		<div className='namePanel' style={styles.panel}>
-			<h2>Get Started</h2>
-			<p>Pick a screen name</p>
-			<Input placeholder='JosieDaddy420' />
-			<br/><br/><br/>
-			<Button text='Join Game' />
-			<br/>
-			<Button text='Create Game' />
-		</div>
-	);
-};
+class NamePanel extends React.Component {
+	constructor() {
+		super();
+		this.nameInputVal = '';
+	}
+
+	// check if screen name has been filled in
+	// then change route to whatever param says
+	checkAndChange(newRoute) {
+		if (this.nameInputVal.length > 0) {
+			// save the name in localstorage
+			localStorage.setItem('screenName', this.nameInputVal);
+			// re route
+			this.props.reRoute(newRoute);
+		}
+		else // if we get here, the name is empty
+			alert('please fill in the name');
+	}
+
+	// called whenever the screen name input is changed
+	nameChange(e) {
+		this.nameInputVal = e.target.value;
+	}
+
+	render() {
+		return (
+			<div className='namePanel' style={styles.panel}>
+				<h2>Get Started</h2>
+				<p>Pick a screen name</p>
+				<Input placeholder='JosieDaddy420' onChange={this.nameChange.bind(this)} />
+				<br/><br/><br/>
+				<Button text='Join Game' onClick={() => this.checkAndChange('./join')}/>
+				<br/>
+				<Button text='Create Game' onClick={() => this.checkAndChange('/create')} />
+			</div>
+	    );
+	}
+}
 
 NamePanel.propTypes = {
-	text: PropTypes.string // text to display in button
+	reRoute: PropTypes.func
 };
 
 export default NamePanel;

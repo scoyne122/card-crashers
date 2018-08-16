@@ -10,11 +10,19 @@ const styles = {
 };
 
 class Login extends React.Component {
+	constructor() {
+		super();
+	}
+
+	// pass as prop to children that need to change page
+	reRoute(newRoute) {
+		this.props.history.push(newRoute);
+	}
 
 	render() {
 		return (
 		    <div style={styles.login}>
-			    <NamePanel />
+			    <NamePanel reRoute={this.reRoute.bind(this)} />
 			</div>
 		);
 	}

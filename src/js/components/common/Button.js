@@ -14,12 +14,13 @@ const styles = {
 	}
 };
 
-const Button = ({ text }) => {
-	return <div className='button' style={styles.button}>{text}</div>;
+const Button = ({ text, onClick }) => {
+	return <div className='button' style={styles.button} onClick={onClick}>{text}</div>;
 };
 
 Button.propTypes = {
-	text: PropTypes.string // text to display in button
+	text: PropTypes.string, // text to display in button
+	onClick: PropTypes.func, // what to do when pressed
 };
 
 export default Button;
