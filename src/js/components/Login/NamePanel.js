@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Input from '../common/Input';
 import Button from '../common/Button';
+import { makeid } from '../../util/helperFuncs';
 
 // see hover styles in main.css
 const styles = {
@@ -35,8 +37,9 @@ class NamePanel extends React.Component {
 	// then change route to whatever param says
 	checkAndChange(newRoute) {
 		if (this.nameInputVal.length > 0) {
-			// save the name in localstorage
+			// save the name and id in localstorage
 			localStorage.setItem('screenName', this.nameInputVal);
+			localStorage.setItem('id', makeid(8));
 			// re route
 			this.props.reRoute(newRoute);
 		}

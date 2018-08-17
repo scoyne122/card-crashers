@@ -2,6 +2,7 @@ import React from 'react';
 
 import Input from '../common/Input';
 import Button from '../common/Button';
+import { makeid } from '../../util/helperFuncs';
 
 const styles = {
 	create: {
@@ -23,19 +24,6 @@ class Create extends React.Component {
 	}
 
 	/**
-	 * create a randomm 5 character id
-	 */
-	makeid() {
-		var text = "";
-		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	  
-		for (var i = 0; i < 5; i++)
-		  text += possible.charAt(Math.floor(Math.random() * possible.length));
-	  
-		return text;
-	  }
-
-	/**
 	 * save game name and create game code
 	 * called when final button is clicked
 	 */
@@ -47,7 +35,7 @@ class Create extends React.Component {
 		}
 		localStorage.setItem('gameName', this.gameNameVal);
 		// create and save game code
-		const gameCode = this.makeid();
+		const gameCode = makeid();
 		localStorage.setItem('gameCode', gameCode);
 		// send them over to the game page
 		this.props.history.push(`/play/${this.gameNameVal}_${gameCode}`);
