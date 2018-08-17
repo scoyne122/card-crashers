@@ -10,9 +10,6 @@ const styles = {
 };
 
 class Login extends React.Component {
-	constructor() {
-		super();
-	}
 
 	// pass as prop to children that need to change page
 	reRoute(newRoute) {
