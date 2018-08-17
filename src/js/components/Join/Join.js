@@ -42,7 +42,7 @@ class Join extends React.Component {
 		return (
 			<div style={styles.join}>
 				<h2>Join a game</h2>
-				<Input placeholder='Enter game name' onChange={e => this.gameNameVal = e.target.value}/>
+				<Input placeholder='Enter game name' onChange={e => this.gameNameVal = e.target.value} maxLength={14}/>
 				<br/><br/>
 				<Input placeholder='Enter game code' onChange={e => this.gameCodeVal = e.target.value}/>
 				<br/><br/>

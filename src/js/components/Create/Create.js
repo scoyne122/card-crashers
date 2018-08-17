@@ -45,7 +45,7 @@ class Create extends React.Component {
 		return (
 			<div style={styles.create}>
 				<h2>Create a game</h2>
-				<Input placeholder='Choose a name' onChange={this.nameChange.bind(this)}/>
+				<Input placeholder='Choose a name' onChange={this.nameChange.bind(this)} maxLength={14}/>
 				<br/><br/>
 				<Button text='Create!'onClick={this.createGame.bind(this)}/>
 			</div>

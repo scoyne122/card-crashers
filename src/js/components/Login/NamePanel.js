@@ -57,9 +57,9 @@ class NamePanel extends React.Component {
 			<div className='namePanel' style={styles.panel}>
 				<h2>Get Started</h2>
 				<p>Pick a screen name</p>
-				<Input placeholder='JosieDaddy420' onChange={this.nameChange.bind(this)} />
+				<Input placeholder='JosieDaddy420' onChange={this.nameChange.bind(this)} maxLength={14} />
 				<br/><br/><br/>
-				<Button text='Join Game' onClick={() => this.checkAndChange('./join')}/>
+				<Button text='Join Game' onClick={() => this.checkAndChange('/join')} />
 				<br/>
 				<Button text='Create Game' onClick={() => this.checkAndChange('/create')} />
 			</div>

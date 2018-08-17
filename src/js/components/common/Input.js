@@ -13,13 +13,14 @@ const styles = {
 	}
 };
 
-const Input = ({ placeholder, onChange }) => {
-	return <input className='input' style={styles.input} placeholder={placeholder} onChange={onChange} />;
+const Input = ({ placeholder, onChange, maxLength }) => {
+	return <input className='input' style={styles.input} placeholder={placeholder} onChange={onChange} maxLength={maxLength} />;
 };
 
 Input.propTypes = {
 	text: PropTypes.string, // text to display in button
-	onChange: PropTypes.func
+	onChange: PropTypes.func,
+	maxLength: PropTypes.number
 };
 
 export default Input;
