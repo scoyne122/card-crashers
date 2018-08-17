@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+
 import App from './components/App';
 import Login from './components/Login/Login';
-import { HashRouter, Route, Switch } from 'react-router-dom';
 import Join from './components/Join/Join';
 import Create from './components/Create/Create';
 import Play from './components/Play/Play';
