@@ -27,7 +27,7 @@ class Play extends React.Component {
 					<Tile width="11cm" height="9cm">Second</Tile>
 				</div>
 				<br/>
-				<Tile width="24.5cm" height="0">Bottom</Tile>
+				<Tile width="24.5cm" height="auto" padding="0">Bottom</Tile>
 			</div>
 		);
 	}

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Tile = ({ width, height, children }) => {
+const Tile = ({ width, height, children, padding }) => {
     const styles = {
         tile: {
             display: 'inline-block',
-            padding: '1cm',
+            padding: padding || '1cm',
             backgroundColor: 'white',
             width: width || '4cm',
             height: height || '4cm',
@@ -20,7 +20,8 @@ const Tile = ({ width, height, children }) => {
 Tile.propTypes = {
     width: PropTypes.string,
     height: PropTypes.string,
-    children: PropTypes.node
+    children: PropTypes.node,
+    padding: PropTypes.string
 };
 
 export default Tile;
