@@ -10,6 +10,7 @@ const MainInput = ({ width, padding, placeholder }) => {
             width: width || '100%',
             borderRadius: '2cm',
             border: '2pt solid gray',
+            boxSizing: 'border-box',
             fontSize: '1.4em'
         }
     };

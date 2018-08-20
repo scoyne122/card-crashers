@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Tile = ({ width, height, children, padding }) => {
+const Tile = ({ children, padding, gridCoords }) => {
     const styles = {
         tile: {
-            display: 'inline-block',
             padding: padding || '1cm',
             backgroundColor: 'white',
-            width: width || '4cm',
-            height: height || '4cm',
             borderRadius: '10pt',
-            boxShadow: '#4a4a4a 6px 6px 20px'
+            boxSizing: 'border-box',
+            boxShadow: '#4a4a4a 6px 6px 20px',
+            gridColumnStart: gridCoords ? gridCoords[0][0] : 'default',
+            gridColumnEnd: gridCoords ? gridCoords[1][0] : 'default',
+            gridRowStart: gridCoords ? gridCoords[0][1] : 'default',
+            gridRowEnd: gridCoords ? gridCoords[1][1] : 'default'
         }
     };
 
@@ -18,10 +20,9 @@ const Tile = ({ width, height, children, padding }) => {
 };
 
 Tile.propTypes = {
-    width: PropTypes.string,
-    height: PropTypes.string,
     children: PropTypes.node,
-    padding: PropTypes.string
+    padding: PropTypes.string,
+    gridCoords: PropTypes.array
 };
 
 export default Tile;
