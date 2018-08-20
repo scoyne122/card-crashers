@@ -3,6 +3,7 @@ import React from 'react';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import Tile from '../common/Tile';
+import MainInput from './MainInput';
 
 const styles = {
 	play: {
@@ -27,7 +28,9 @@ class Play extends React.Component {
 					<Tile width="11cm" height="9cm">Second</Tile>
 				</div>
 				<br/>
-				<Tile width="24.5cm" height="auto" padding="0">Bottom</Tile>
+				<Tile width="26cm" height="auto" padding="6pt">
+					<MainInput width="23cm" placeholder="Write an answer here"/>
+				</Tile>
 			</div>
 		);
 	}

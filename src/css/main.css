@@ -19,7 +19,11 @@ body {
     color: #006bb3;
 }
 
-input:focus {
+.input:focus {
     border-left: 2pt solid #0098ff !important;
     border-bottom: 2pt solid #0098ff !important;
+}
+
+.mainInput:focus {
+    border: 2pt solid #0098ff !important;
 }
